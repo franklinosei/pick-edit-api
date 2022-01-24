@@ -49,9 +49,6 @@ async def create_upload_files(files: List[UploadFile] = File(...)):
         with torch.no_grad():
             Ics = model(Ic, Is)
 
-        name_cs = "ics.jpg"
-        save_image(Ics[0], name_cs)
-
         # im = Image.fromarray(Ics[0].cpu().numpy())
 
         grid = make_grid(Ics[0])
